@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <title>Shop quan ao</title>
+        <style>
+            body {
+                font-size: 1.5em;
+            }
+             ul li {
+                display: inline;
+                padding: 10px;
+                border-bottom: 4px;
+            }
+            ul li a {
+                text-decoration: none;
+                color: white;     
+            }
+            ul li:hover {
+                border-bottom-style: solid;
+                border-bottom-width: 4px;
+                border-bottom-color: rgb(214, 253, 14);
+            }
+            .search-box {
+                 width: 200px;
+                 position: relative;
+                 display: inline-block;
+                 font-size: 14px;
+                 float: right;
+            }
+
+            .search-box input[type="text"] {
+                height: 32px;
+                padding: 5px 10px;
+                border: 1px solid #CCCCCC;
+                font-size: 14px;
+            }
+
+            .search-box button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 32px;
+                width: 32px;
+                background: #CCCCCC;
+                cursor: pointer;
+                border: none;
+                text-align: center;
+                font-size: 14px;
+            }
+            h2 {
+                background-color: green;
+                padding: 10px;
+            }
+            * {
+	box-sizing:border-box;	
+}
+.container-slides {
+	margin:auto;
+	max-width:700px;
+	position:relative;	
+}
+img {
+	width:100%;
+	max-height:300px;
+}
+.container-slides .slides {
+	display:none;	
+}
+.container-slides .number {
+	position:absolute;
+	top:0;
+	left:0;
+	padding:20px;	
+}
+.container-slides .dotlist {
+	width:15px;
+	height:15px;
+	background-color:#999;
+	display:inline-block;
+	border-radius:50%;
+	cursor:pointer;	
+	transition:background-color 0.5s;
+	margin-top:10px;
+}
+.container-slides .dotlist:hover {
+	background-color:#ccc;	
+}
+.container-slides .dotlist.active {
+	background-color:black;	
+}
+.container-slides .fade {
+	animation:fade 2;	
+}
+@keyframes fade {
+	from {opacity:0.4;}
+	to {opacity:1;}	
+}
+@media screen and (max-width:700px) {
+	.container-slides {
+		margin-top:30px;
+		max-width:400px;	
+	}
+	.container-slides img {
+		width:100%;
+		height:200px;
+	}
+} 
+
+#luoi       
+            {
+                display: inline-grid;
+                grid-template-columns: auto auto auto auto auto;
+            }
+            p {
+                column-count: 3;
+            }
+            @media screen and (max-width: 820px) {
+                #luoi {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
+            }
+            @media screen and (max-width: 380px) {
+                body {
+                    background-color: white;
+                    color: brown;
+                    font-size: 1.6em;
+                }
+                #luoi {
+                    display: grid;
+                    grid-template-columns: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <h2>
+                <li><a href="trangchuwebquanao.html">Trang chủ</a>
+                <li><a href="gioithieuwebquanao.html">Giới thiệu</a>
+                 <li><a href="sanphamwebquanao.html">Sản phẩm</a>
+                <li><a href="trangtintucwebquanao.html">Tin tức</a>
+                <li><a href="tranglienhewebquanao.html">Liên hệ</a>
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm..." />
+                    <button type="submit">&#128269;</button>
+                </div>
+            </h2>
+        </ul>
+        <div class="container-slides">
+
+            <div class="slides fade">
+                <div class="number">1 / 5</div>
+                <img src="https://img.lazcdn.com/g/p/ce03645345c4b23ecdf9e0de006931e5.jpg_720x720q80.jpg" />
+            </div>
+            <div class="slides fade">
+                <div class="number">2 / 5</div>
+                <img src="https://lh6.googleusercontent.com/-6sSFhUUUtKhn5mct6a0vXthtViwD1G2UzD-Nory_TYqzpyG0wuFVsaszYoSaBW_RQvvhzxKEfi1jLseD8Dgje3DjjUGDRjxcmsuXgXMOCMly_UzI4ST9jmEhwaA7V0Inll5-tvp" />
+            </div>
+            <div class="slides fade">
+                <div class="number">3 / 5</div>
+                <img src="https://cf.shopee.vn/file/477e7df12c96f2bd3cb86b59e0147b3f" />
+            </div>
+            <div class="slides fade">
+                <div class="number">4 / 5</div>
+                <img src="https://cf.shopee.vn/file/dce46f37c60a43843b8a696a8cfa93a0" />
+            </div>
+            <div class="slides fade">
+                <div class="number">5 / 5</div>
+                <img src="https://images.pexels.com/photos/3527572/pexels-photo-3527572.jpeg?auto=compress&cs=tinysrgb&w=600"/>
+            </div>
+            <div class="dot" align="center">
+                <span class="dotlist" onclick="currentSlide(0)"></span>
+                <span class="dotlist" onclick="currentSlide(1)"></span>
+                <span class="dotlist" onclick="currentSlide(2)"></span>
+                <span class="dotlist" onclick="currentSlide(3)"></span>
+                <span class="dotlist" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+        
+        <script>
+        var slideIndex = 0;
+        showSlide(slideIndex);
+        setInterval(showSlide,3000);
+        function showSlide(n) {
+            var i, j, slide, dot;
+            slide = document.getElementsByClassName('slides');
+            dot = document.getElementsByClassName('dotlist');
+            for(i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+            }
+            if(slideIndex == slide.length) {
+                slideIndex = 0;
+            }
+            slideIndex++;
+            slide[slideIndex - 1].style.display = "block";
+            for(j = 0; j < dot.length; j++) {
+                dot[j].classList.remove("active");
+            }
+            dot[slideIndex - 1].classList.add("active");
+        }
+        function currentSlide(n) {
+            showSlide(slideIndex = n);	
+        }
+        </script>
+        <center><h3>SẢN PHẨM MỚI NHẤT </h3></center>
+        <div id="luoi">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHAfA9t0PIDL7IWgzcIelSIzaRiUzGsuJ8Crccj7PUlv5pqfs2xyJi_GEbKYQ9SaJrbtI&usqp=CAU"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsnzqc0cwjU61lg8uvn9RnQUaAwB7O5SYos6nG8AFE2b1cEBEms8OT0rRvvD-9_BCukco&usqp=CAU"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZMWZY9XjrLbXeSix7CWCD1rlJLWUk48yvLMrH4yeNpxWnn867cD5_GbnQHetrbK_mV0U&usqp=CAU"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3XgFP3VXUefW5E3db0Wa0mITkTZdtdORoXutfZHBtLC30nuR9R1xplNMgLnd5Szb8eY&usqp=CAU"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbcmhN8VoTPGXKNxshg7XybVp5sICViHlZK3CrEuvhz20EeRN9imhEHfhtGZRRC3HXP8&usqp=CAU"/>
+        </div>
+    </body>
+</html>
